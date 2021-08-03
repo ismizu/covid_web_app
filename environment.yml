@@ -1,4 +1,4 @@
 channels:
   - defaults
 dependencies:
-  - numpy
+  - plotly = 5.0.0
