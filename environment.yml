@@ -2,4 +2,3 @@ channels:
   - defaults
   - conda
 dependencies:
-  - streamlit
