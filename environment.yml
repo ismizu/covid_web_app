@@ -1,5 +1,4 @@
 channels:
   - defaults
 dependencies:
-  - plotly
   - numpy
