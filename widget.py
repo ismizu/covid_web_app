@@ -1,10 +1,10 @@
 import pickle
 import base64
-import numpy as np
+#import numpy as np
 import streamlit as st
 from datetime import date
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
+#import plotly.graph_objects as go
+#from plotly.subplots import make_subplots
 
 st.set_page_config(layout = 'wide', initial_sidebar_state = 'collapsed')
 
@@ -119,7 +119,7 @@ def widget_fig(state_value):
 
     return fig
 
-st.plotly_chart(widget_fig(selection_box), use_container_width = True)
+st.plotly_chart('NK_test', use_container_width = True)
 
 def component_plot_path(state_value):
 
