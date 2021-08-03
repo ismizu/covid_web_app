@@ -1,8 +1,7 @@
 import pickle
 import base64
 import streamlit as st
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
+from datetime import date
 
 st.set_page_config(layout = 'wide', initial_sidebar_state = 'collapsed')
 
@@ -53,6 +52,23 @@ As opposed to capturing many smaller trends.
 (Such as the emergence of the delta strain)
 >- The dates of these events can be entered into Facebook Prophet to help it \
 identify the overall trend by understanding where anomalies are.''')
+
+current_date = date.today()
+covid_first_case = date(2020, 1, 19)
+days_since = current_date - covid_first_case
+
+st.sidebar.markdown(f'''>One of the biggest problems with the model falls to available data per state.
+
+
+The first confirmed case of COVID-19 in the US was on January 19th, 2020. This means that \
+the max collectable data would be {days_since.days}.
+
+For this project, weekly data is used. \
+This means that each state can only have a max of {round(days_since.days/7)} data points.
+
+
+For machine learning models, this is incredibly low and affects its ability to accurately \
+predict the future.''')
 
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
