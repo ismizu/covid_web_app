@@ -113,13 +113,13 @@ def widget_fig(state_value):
     
     state_value = [x for x,y in list(zip(states.keys(), states.values())) if y == selection_box][0]
     
-    load_graph = open(f'pickled_data/graphs_pickled/{state_value}_graph.pickle','rb')
+    load_graph = open(f'pickled_data/graphs_pickled/{state_value}_test.pickle','rb')
     fig = pickle.load(load_graph)
     load_graph.close()
 
     return fig
 
-st.plotly_chart('NJ_test.pickle', use_container_width = True)
+st.plotly_chart(widget_fig(selection_box), use_container_width = True)
 
 def component_plot_path(state_value):
 
