@@ -113,7 +113,7 @@ def widget_fig(state_value):
     
     state_value = [x for x,y in list(zip(states.keys(), states.values())) if y == selection_box][0]
     
-    load_graph = open(f'pickled_data/graphs_pickled/{state_value}_test.pickle','rb')
+    load_graph = open(f'pickled_data/graphs_pickled/{state_value}_graph_dict.pickle','rb')
     fig = pickle.load(load_graph)
     load_graph.close()
 
