@@ -1,15 +1,18 @@
 import pickle
 import base64
-#import numpy as np
 import streamlit as st
 from datetime import date
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
+#Set initial app layout
 st.set_page_config(layout = 'wide', initial_sidebar_state = 'collapsed')
 
+#Set title
 st.title('COVID-19: Vaccination Rate Simulator')
 st.markdown('> ### Select a state from the dropdown menu to begin.')
+
+#----- Sidebar discussing errors -----#
 st.sidebar.markdown('''The following models require additional tuning:
 - Hawaii
 - Maine
@@ -56,6 +59,7 @@ As opposed to capturing many smaller trends.
 >- The dates of these events can be entered into Facebook Prophet to help it \
 identify the overall trend by understanding where anomalies are.''')
 
+#Get days since first US COVID case
 current_date = date.today()
 covid_first_case = date(2020, 1, 19)
 days_since = current_date - covid_first_case
@@ -73,6 +77,7 @@ This means that each state can only have a max of {round(days_since.days/7)} dat
 For machine learning models, this is incredibly low and affects its ability to accurately \
 predict the future.''')
 
+#----- Set local image as background -----#
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
@@ -92,6 +97,7 @@ def set_background(png_file):
 
 set_background('images/blank.png')
 
+#----- Set max width -----#
 st.markdown(
         """
 <style>
@@ -103,12 +109,18 @@ st.markdown(
         unsafe_allow_html=True,
     )
 
+
+#----- Visualizations -----#
+
+#Load in states data
 load_states_dict = open('pickled_data/general_data/states.pickle','rb')
 states = pickle.load(load_states_dict)
 load_states_dict.close()
 
+#Create selection box
 selection_box = st.selectbox('State: ', list(states.values()))
 
+#Function to open figure for selection
 def widget_fig(state_value):
     
     state_value = [x for x,y in list(zip(states.keys(), states.values())) if y == selection_box][0]
@@ -119,8 +131,12 @@ def widget_fig(state_value):
 
     return fig
 
+#Render plotly figure
 st.plotly_chart(widget_fig(selection_box), use_container_width = True)
 
+#----- Component Plots -----#
+
+#Function to retrieve correct component plots
 def component_plot_path(state_value):
 
     state_value = [x for x,y in list(zip(states.keys(), states.values())) if y == selection_box][0]
@@ -130,6 +146,7 @@ def component_plot_path(state_value):
 
     return deaths_image_path, hosp_image_path, state_value
 
+#Toggle expander for component plots
 show_more = st.beta_expander('How does this work?')
 
 show_more.markdown('''Below, you can view the components that went into making the baseline predictions.
@@ -149,10 +166,12 @@ Not all states contain outliers and thus, will not contain this plot.
 that is vaccinated. This plot show how the model's fatality and hospitalization predictions are \
 altered as a result of vaccination rates.''')
 
+#Split expander into two columns
 col1, col2 = show_more.beta_columns(2)
 
 extra_components = component_plot_path(selection_box)
 
+#Attach fbprophet's component plots to columns
 col1.header(f'{extra_components[2]} Fatality Forecast Plot')
 col1.image(extra_components[0], use_column_width = True)
 
