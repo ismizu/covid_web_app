@@ -177,3 +177,25 @@ col1.image(extra_components[0], use_column_width = True)
 
 col2.header(f'{extra_components[2]} Hospitalization Forecast Plot')
 col2.image(extra_components[1], use_column_width = True)
+
+#Additional Notes
+more_notes = st.beta_expander('Important Assumptions')
+
+more_notes.markdown('''The models for project make a few important assumptions that are noted below:
+
+1. The model assumes that, when increasing the vaccination rate, that many vaccines were actually available.
+>Vaccines in the US were in short supply for some time. Alterations to the vaccination rates do not cap at supply limits
+2. The model assumes that all events that did happen, would still happen exactly as they did regardless of changes to \
+vaccination rates.
+>For example, some super spreader events may never have happened if vaccination rates were different. \
+In addition, the US was successfully vaccinating individuals when the Delta strain emerged. \
+What might things look like right now if the vaccine had not been available when the strain emerged? \
+The model is incapable of predicting what never happened and can only alter existing trends. Thus, \
+any changes it creates to hospitalizations and fatalities are based on the idea that whatever did happen \
+would still happen.
+3. The model assumes that the entirety of a state\'s population can be vaccinated.
+>There are individuals who rely on herd immunity as they, for genuine medical reasons, \
+cannot receive vaccinations. Although an extremely low percentage of the population, \
+it still means that a vaccination rate of 100%\ is not possible. For more information \
+on who cannot receive vaccinations, please refer to [this CDC resource](https://www.cdc.gov/vaccines/vpd/should-not-vacc.html).
+''')
