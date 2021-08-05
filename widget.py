@@ -196,6 +196,6 @@ would still happen.
 3. The model assumes that the entirety of a state\'s population can be vaccinated.
 >There are individuals who rely on herd immunity as they, for genuine medical reasons, \
 cannot receive vaccinations. Although an extremely low percentage of the population, \
-it still means that a vaccination rate of 100%\ is not possible. For more information \
+it still means that a vaccination rate of 100\% is not possible. For more information \
 on who cannot receive vaccinations, please refer to [this CDC resource](https://www.cdc.gov/vaccines/vpd/should-not-vacc.html).
 ''')
