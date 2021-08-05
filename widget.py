@@ -192,7 +192,7 @@ In addition, the US was successfully vaccinating individuals when the Delta stra
 What might things look like right now if the vaccine had not been available when the strain emerged? \
 The model is incapable of predicting what never happened and can only alter existing trends. Thus, \
 any changes it creates to hospitalizations and fatalities are based on the idea that whatever did happen \
-would still happen.
+still happened.
 3. The model assumes that the entirety of a state\'s population can be vaccinated.
 >There are individuals who rely on herd immunity as they, for genuine medical reasons, \
 cannot receive vaccinations. Although an extremely low percentage of the population, \
