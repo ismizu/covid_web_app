@@ -146,6 +146,8 @@ def component_plot_path(state_value):
 
     return deaths_image_path, hosp_image_path, state_value
 
+st.markdown('#### Select the arrow in the upper left hand corner to view current bugs/fixes')
+
 #Toggle expander for component plots
 show_more = st.beta_expander('How does this work?')
 
