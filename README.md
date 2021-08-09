@@ -2,7 +2,7 @@
 
 This repository contains the necessary files for running of the COVID-19 web application found [here](https://covidmodellingproject.weebly.com/).
 
-![web_app_screenshot.png](https://github.com/ismizu/covid_web_app/blob/main/images/web_app_screenshot.png)
+![app_example.gif](https://github.com/ismizu/covid_web_app/blob/main/images/app_example.gif)
 
 # Repository Structure
 
