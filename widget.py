@@ -78,6 +78,7 @@ For machine learning models, this is incredibly low and affects its ability to a
 predict the future.''')
 
 #----- Set local image as background -----#
+# Currently unused #
 def get_base64(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
