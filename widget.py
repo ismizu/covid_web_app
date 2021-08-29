@@ -11,6 +11,8 @@ st.set_page_config(layout = 'wide', initial_sidebar_state = 'collapsed')
 #Set title
 st.title('COVID-19: Vaccination Rate Simulator')
 st.markdown('> ### Select a state from the dropdown menu to begin.')
+st.markdown('<font size="2"><i>Data Update Currently In Progress</i></font>',
+            unsafe_allow_html = True)
 
 #----- Sidebar discussing errors -----#
 st.sidebar.markdown('''The following models require additional tuning:
