@@ -11,20 +11,21 @@ st.set_page_config(layout = 'wide', initial_sidebar_state = 'collapsed')
 #Set title
 st.title('COVID-19: Vaccination Rate Simulator')
 st.markdown('> ### Select a state from the dropdown menu to begin.')
-st.markdown('<font size="2"><i>Data Update Currently In Progress</i></font>',
-            unsafe_allow_html = True)
+
+#Uncomment note during data update
+#st.markdown('<font size="2"><i>Data Update Currently In Progress</i></font>',
+#            unsafe_allow_html = True)
 
 #----- Sidebar discussing errors -----#
-st.sidebar.markdown('''The following models require additional tuning:
-- Hawaii
-- Maine
+st.sidebar.markdown('''The following models require minor additional tuning:
+- Iowa
+- Idaho
+- Kansas
 - Minnesota
-- New Mexico
-- Ohio
-- Oregon
+- Oklahoma
 - South Dakota
+- Texas
 - Virginia
-- Wisconsin
 ''')
 sidebar_problem = st.sidebar.beta_expander('What\'s wrong?')
 sidebar_problem.markdown('''Currently, the models do not accurately alter hospitalizations \
