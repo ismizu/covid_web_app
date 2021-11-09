@@ -2,6 +2,8 @@
 
 This repository contains the necessary files for running of the COVID-19 web application found [here](https://covidmodellingproject.weebly.com/).
 
+A blog post that reviews the basic Streamlit syntax to create the application can be found [here](https://ismizu.medium.com/streamlit-creating-live-applications-with-only-python-629d08084d78).
+
 ![app_example.gif](https://github.com/ismizu/covid_web_app/blob/main/images/app_example.gif)
 
 # Repository Structure
